@@ -46,6 +46,7 @@ function applyDefaultOptions(opts) {
 	// The dirname of the file is prepended
 	const defaultFormats = [
 		"%", // full file path
+		"%.pcss", // PCSS
 		"%.scss", // SCSS
 		"_%.scss", // SCSS partial
 		"%.css", // CSS
@@ -93,7 +94,7 @@ function applyDefaultOptions(opts) {
 		},
 		// CSS
 		{
-			test: (file) => /\.css$/.test(file),
+			test: (file) => /\.p?css$/.test(file),
 			method: (wrapped, opts) => {
 				opts = opts || {};
 
